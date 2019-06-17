@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-buttons>
+        <ion-buttons>
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      </ion-buttons>
+    </ion-buttons>
+    <ion-searchbar [(ngModel)]="hashtag" (ionInput)="onSearch($event.target.value)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="tweets && tweets.length > 0; else notFound">
+    <ion-card *ngFor="let item of tweets">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-chip>
+            <ion-avatar>
+              <img [src]="item.user.profile_image_url_https">
+            </ion-avatar>
+            <ion-label>{{item.user.name}}</ion-label>
+          </ion-chip>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content [innerHTML]="item.text">
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+  
+  <ng-template #notFound>
+    <ion-card >
+        <ion-card-header>
+        </ion-card-header>
+        <ion-card-content class="ion-text-center">
+            Not found any tweet
+        </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>

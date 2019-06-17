@@ -1,0 +1,8 @@
+{
+  "name": "tweetLand",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
