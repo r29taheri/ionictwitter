@@ -10,7 +10,7 @@ export class TweetService {
     const url = `https://af1993.ir/api/twitter/${hashtag}/${count}`;
     const options = {
       headers: new HttpHeaders({
-        'Authorization': 'Bearer $2y$10$Q2VRKOscKhvMPvh/21c9l.8KPujpHWpRj0LsgRamvkDvVeEMSMfPu'
+        'Authorization': 'Bearer $2y$10$1irbofmTl7bAuII1O3jaZu4ykkIQAQxFvnnGQ9kHDlxM19lifPxe2'
       })
     }
     return this.http.get(url, options);
